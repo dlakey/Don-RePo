@@ -1,0 +1,33 @@
+---
+- hosts: ios
+  gather_facts: no
+  connection: local
+
+  tasks:
+  - name: Obtain Login
+    include_vars: pass.yaml
+
+  - name: Define Provider
+    set_fact:
+      provider:
+        host: "{{ inventory_hostname }}"
+        username: "{{ creds['username'] }}"
+        password: "{{ creds['password'] }}"
+        auth_pass: "{{ creds['auth_pass'] }}"
+
+  - name: Switch lo0 Config
+    ios_config:
+      provider: "{{ provider }}"
+      authorize: yes
+      lines:
+        - interface {{ int }} 
+        - ip address {{ ipaddress }} 255.255.255.255
+        - interface {{ int1 }}
+        - ip address {{ ipaddress1 }} 255.255.255.255
+        - interface {{ int2 }}
+        - ip address {{ ipaddress2 }} 255.255.255.255
+        - interface {{ int3 }}
+        - ip address {{ ipaddress3 }} 255.255.255.255
+      match: exact
+
+- include: showrun.yaml
