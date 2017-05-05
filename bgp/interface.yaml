@@ -1,0 +1,39 @@
+---
+- hosts: att-peer1
+  gather_facts: no
+  connection: local
+
+  tasks:
+  - name: Obtain Login
+    include_vars: pass.yaml
+
+  - name: Define Provider
+    set_fact:
+      provider:
+        host: "{{ inventory_hostname }}"
+        username: "{{ creds['username'] }}"
+        password: "{{ creds['password'] }}"
+        auth_pass: "{{ creds['auth_pass'] }}"
+
+  - name: Switch Interface Config
+    ios_config:
+      provider: "{{ provider }}"
+      authorize: yes
+      lines:
+         - interface {{ int }}
+         - ip address {{ ipaddress }} {{ mask16 }}
+         - interface {{ int1 }}
+         - ip address {{ ipaddress1 }} {{ mask16 }}
+         - interface {{ int2 }}
+         - ip address {{ ipaddress2 }} {{ mask16 }}
+         - interface {{ int3 }}
+         - ip address {{ ipaddress3 }} {{ mask24 }}
+         - interface {{ int4 }}
+         - ip address {{ ipaddress4 }} {{ mask24 }}
+         - interface {{ int5 }}
+         - ip address {{ ipaddress5 }} {{ mask24 }}
+         - interface {{ int6 }}
+         - ip address {{ ipaddress6 }} {{ mask30 }}
+         - interface {{ int7 }}
+         - ip address {{ ipaddress7 }} {{ mask30 }}
+      match: exact
