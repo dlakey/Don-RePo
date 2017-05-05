@@ -1,0 +1,48 @@
+---
+- hosts: att-peer1
+  gather_facts: no
+  connection: local
+
+  tasks:
+  - name: Obtain Login
+    include_vars: pass.yaml
+
+  - name: Define Provider
+    set_fact:
+      provider:
+        host: "{{ inventory_hostname }}"
+        username: "{{ creds['username'] }}"
+        password: "{{ creds['password'] }}"
+        auth_pass: "{{ creds['auth_pass'] }}"
+
+  - name: Switch Interface Config
+    ios_config:
+      provider: "{{ provider }}"
+      authorize: yes
+      lines:
+         - router bgp 2018
+         - bgp log-neighbor-changes
+         - neighbor {{ verizonpeer1pop2 }} remote-as 2735
+         - neighbor {{ verizonpeer1pop2 }} description eBGP to Verizon-Peer1
+         - neighbor {{ level3peerpop2 }} remote-as 1950
+         - neighbor {{ level3peerpop2 }} description eBGP to Level3-Peer
+         - neighbor {{ verizonpeer2pop2 }} remote-as 2735
+         - neighbor {{ verizonpeer2pop2 }}  description eBGP to Verizon-Peer2
+         - neighbor {{ attpeer2internal }} remote-as 2018
+         - neighbor {{ attpeer2internal }}  description iBGP peer ATT-Per2
+         - neighbor {{ attpeer2internal }}  update-source Loopback0
+         - address-family ipv4
+         - network 67.40.0.0 mask 255.255.0.0
+         - network 68.5.0.0 mask 255.255.0.0
+         - network 69.20.0.0 mask 255.255.0.0
+         - network 68.100.20.0 mask 255.255.255.0
+         - network 68.100.21.0 mask 255.255.255.0
+         - neighbor {{ verizonpeer1pop2 }} activate
+         - neighbor {{ verizonpeer1pop2 }} send-community
+         - neighbor {{ level3peerpop2 }} activate
+         - neighbor {{ level3peerpop2 }} send-community
+         - neighbor {{ verizonpeer2pop2 }} activate
+         - neighbor  {{ verizonpeer2pop2 }} send-community
+         - neighbor {{ attpeer2internal }} activate
+         - neighbor {{ attpeer2internal }} next-hop-self
+      match: exact
