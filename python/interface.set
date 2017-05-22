@@ -1,0 +1,5 @@
+set interfaces lo0 unit 1 family inet address 192.168.15.1/32
+set interfaces lo0 unit 1 family inet address 192.168.15.2/32
+set interfaces lo0 unit 1 family inet address 192.168.15.3/32
+set interfaces lo0 unit 1 family inet address 192.168.15.4/32
+set interfaces lo0 unit 1 family inet address 192.168.15.5/32
