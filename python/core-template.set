@@ -1,0 +1,45 @@
+set interfaces lo0 unit 1 family inet address 68.232.32.1/24
+set interfaces lo0 unit 1 family inet address 68.232.33.1/24
+set interfaces lo0 unit 1 family inet address 68.232.34.1/24
+set interfaces lo0 unit 1 family inet address 68.232.35.1/24
+set interfaces lo0 unit 1 family inet address 68.232.42.1/24
+set interfaces lo0 unit 1 family inet address 68.232.44.1/24
+set interfaces lo0 unit 1 family inet address 68.232.45.1/24
+set interfaces lo0 unit 1 family inet address 68.232.46.1/24
+set interfaces lo0 unit 1 family inet address 68.232.47.1/24
+set interfaces lo0 unit 1 family inet address 72.21.80.1/24
+set interfaces lo0 unit 1 family inet address 72.21.81.1/24
+set interfaces lo0 unit 1 family inet address 72.21.91.1/24
+set interfaces lo0 unit 1 family inet address 72.21.92.1/24
+set interfaces lo0 unit 1 family inet address 93.184.215.1/24
+set interfaces lo0 unit 1 family inet address 93.184.216.1/24
+set interfaces lo0 unit 1 family inet address 93.184.219.1/24
+set interfaces lo0 unit 1 family inet address 93.184.220.1/24
+set interfaces lo0 unit 1 family inet address 93.184.221.1/24
+set interfaces lo0 unit 1 family inet address 93.184.222.1/24
+set interfaces lo0 unit 1 family inet address 93.184.223.1/24
+set policy-options prefix-list ANYCAST 68.232.32.0/24
+set policy-options prefix-list ANYCAST 68.232.33.0/24
+set policy-options prefix-list ANYCAST 68.232.34.0/24
+set policy-options prefix-list ANYCAST 68.232.35.0/24
+set policy-options prefix-list ANYCAST 68.232.42.0/24
+set policy-options prefix-list ANYCAST 68.232.44.0/24
+set policy-options prefix-list ANYCAST 68.232.45.0/24
+set policy-options prefix-list ANYCAST 68.232.46.0/24
+set policy-options prefix-list ANYCAST 68.232.47.0/24
+set policy-options prefix-list ANYCAST 72.21.80.0/24
+set policy-options prefix-list ANYCAST 72.21.81.0/24
+set policy-options prefix-list ANYCAST 72.21.91.0/24
+set policy-options prefix-list ANYCAST 72.21.92.0/24
+set policy-options prefix-list ANYCAST 93.184.215.0/24
+set policy-options prefix-list ANYCAST 93.184.216.0/24
+set policy-options prefix-list ANYCAST 93.184.219.0/24
+set policy-options prefix-list ANYCAST 93.184.220.0/24
+set policy-options prefix-list ANYCAST 93.184.221.0/24
+set policy-options prefix-list ANYCAST 93.184.222.0/24
+set policy-options prefix-list ANYCAST 93.184.223.0/24
+delete protocols bgp group BORDERS export NOTHING
+set policy-options policy-statement EXPORT_TO_ANYCAST term EBGP from prefix-list ANYCAST
+set policy-options policy-statement EXPORT_TO_ANYCAST term EBGP then accept
+set protocols bgp group BORDERS export EXPORT_TO_ANYCAST
+set protocols bgp group BORDERS export NOTHING
