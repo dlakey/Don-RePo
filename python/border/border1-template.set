@@ -1,0 +1,107 @@
+set groups BGP_DEFAULTS protocols bgp path-selection always-compare-med
+set groups BGP_DEFAULTS protocols bgp group <*> log-updown
+set groups BGP_DEFAULTS protocols bgp group <*> multipath
+set groups BGP_NOTHING protocols bgp group <*> neighbor <*> import NOTHING
+set groups BGP_NOTHING protocols bgp group <*> neighbor <*> export NOTHING
+set groups BGP_EXPORT_NOTHING protocols bgp group <*> neighbor <*> export NOTHING
+set system host-name border1.min
+set system domain-name edgecastcdn.net
+set system time-zone UTC
+set system default-address-selection
+set system no-multicast-echo
+set system no-redirects
+set system no-ping-record-route
+set system no-ping-time-stamp
+set system internet-options icmpv4-rate-limit packet-rate 500
+set system internet-options icmpv4-rate-limit bucket-size 10
+set system internet-options icmpv6-rate-limit packet-rate 500
+set system internet-options icmpv6-rate-limit bucket-size 10
+set system internet-options source-quench
+set system internet-options tcp-drop-synfin-set
+set system internet-options no-tcp-reset drop-all-tcp
+set routing-options static route 0.0.0.0/0 next-hop 172.16.1.2
+set routing-options autonomous-system 15133
+set protocols bgp path-selection always-compare-med
+set protocols bgp local-as 15133
+set protocols bgp group TELIA type external
+set protocols bgp group TELIA description TELIA
+set protocols bgp group TELIA import GENERIC_PROTECTION
+set protocols bgp group TELIA import IMPORT_FROM_TELIA
+set protocols bgp group TELIA import NOTHING
+set protocols bgp group TELIA family inet unicast loops 3
+set protocols bgp group TELIA export EXPORT_TO_TELIA
+set protocols bgp group TELIA export NOTHING
+set protocols bgp group TELIA remove-private
+set protocols bgp group CORE1 type external
+set protocols bgp group CORE1 local-as 15133
+set protocols bgp group CORE1 neighbor 172.16.155.250 peer-as 65400
+set policy-options prefix-list ANYCAST_ALL 68.232.32.0/24
+set policy-options prefix-list ANYCAST_ALL 68.232.33.0/24
+set policy-options prefix-list ANYCAST_ALL 68.232.34.0/24
+set policy-options prefix-list ANYCAST_ALL 68.232.35.0/24
+set policy-options prefix-list ANYCAST_ALL 68.232.42.0/24
+set policy-options prefix-list ANYCAST_ALL 68.232.44.0/24
+set policy-options prefix-list ANYCAST_ALL 68.232.45.0/24
+set policy-options prefix-list ANYCAST_ALL 68.232.46.0/24
+set policy-options prefix-list ANYCAST_ALL 68.232.47.0/24
+set policy-options prefix-list ANYCAST_ALL 72.21.80.0/24
+set policy-options prefix-list ANYCAST_ALL 72.21.81.0/24
+set policy-options prefix-list ANYCAST_ALL 72.21.91.0/24
+set policy-options prefix-list ANYCAST_ALL 72.21.92.0/24
+set policy-options prefix-list ANYCAST_ALL 93.184.215.0/24
+set policy-options prefix-list ANYCAST_ALL 93.184.216.0/24
+set policy-options prefix-list ANYCAST_ALL 93.184.219.0/24
+set policy-options prefix-list ANYCAST_ALL 93.184.220.0/24
+set policy-options prefix-list ANYCAST_ALL 93.184.221.0/24
+set policy-options prefix-list ANYCAST_ALL 93.184.222.0/24
+set policy-options prefix-list ANYCAST_ALL 93.184.223.0/24
+set policy-options prefix-list TELIA_LOCAL 152.195.88.0/24
+set policy-options prefix-list TELIA_LOCAL 172.16.155.0/24
+set policy-options prefix-list TELIA_METRO_LOCAL 46.22.64.0/23
+set policy-options prefix-list RFC1918_BLOCKS 10.0.0.0/8
+set policy-options prefix-list RFC1918_BLOCKS 172.16.0.0/12
+set policy-options prefix-list RFC1918_BLOCKS 192.168.0.0/16
+set policy-options prefix-list MARTIANS 0.0.0.0/8
+set policy-options prefix-list MARTIANS 100.64.0.0/10
+set policy-options prefix-list MARTIANS 127.0.0.0/8
+set policy-options prefix-list MARTIANS 169.254.0.0/16
+set policy-options prefix-list MARTIANS 192.0.0.0/24
+set policy-options prefix-list MARTIANS 192.0.2.0/24
+set policy-options prefix-list MARTIANS 198.18.0.0/15
+set policy-options prefix-list MARTIANS 198.51.100.0/24
+set policy-options prefix-list MARTIANS 203.0.113.0/24
+set policy-options prefix-list MARTIANS 224.0.0.0/4
+set policy-options prefix-list MARTIANS 240.0.0.0/4
+set policy-options prefix-list MARTIANS 255.255.255.255/32
+set policy-options prefix-list DO_NOT_REMOVE 192.168.255.0/32
+set policy-options prefix-list ANYCAST_DNS 72.21.80.0/24
+set policy-options prefix-list ANYCAST_DNS 192.16.16.0/24
+set policy-options prefix-list ANYCAST_DNS 192.30.30.0/24
+set policy-options prefix-list ANYCAST_DNS 192.229.150.0/24
+set policy-options prefix-list ANYCAST_DNS 192.229.151.0/24
+set policy-options prefix-list ANYCAST_DNS 192.229.254.0/23
+set policy-options prefix-list ANYCAST_DNS 192.229.254.0/24
+set policy-options prefix-list ANYCAST_DNS 192.229.255.0/24
+set policy-options prefix-list ANYCAST_DNS 198.7.29.0/24
+set policy-options prefix-list ANYCAST_CAN_ALL 192.16.0.0/24
+set policy-options prefix-list ANYCAST_CAN_ALL 192.16.31.0/24
+set policy-options prefix-list ANYCAST_CAN_ALL 192.30.31.0/24
+set policy-options prefix-list ANYCAST_CAN_ALL 198.7.30.0/24
+set policy-options prefix-list ANYCAST_CAN_ALL 198.7.31.0/24
+set policy-options policy-statement EXPORT_TO_TELIA term PREPENDX1 from prefix-list TELIA_LOCAL
+set policy-options policy-statement EXPORT_TO_TELIA term PREPENDX1 from prefix-list TELIA_METRO_LOCAL
+set policy-options policy-statement EXPORT_TO_TELIA term PREPENDX1 from prefix-list DO_NOT_REMOVE
+set policy-options policy-statement EXPORT_TO_TELIA term PREPENDX1 from prefix-list ANYCAST_DNS
+set policy-options policy-statement EXPORT_TO_TELIA term PREPENDX1 from prefix-list ANYCAST_ALL
+set policy-options policy-statement EXPORT_TO_TELIA term PREPENDX1 from prefix-list ANYCAST_CAN_ALL
+set policy-options policy-statement EXPORT_TO_TELIA term PREPENDX1 then as-path-prepend 15133
+set policy-options policy-statement EXPORT_TO_TELIA term PREPENDX1 then accept
+set policy-options policy-statement EXPORT_TO_TELIA term DENY_ALL_ELSE then reject
+set policy-options policy-statement EXPORT_TO_TELIAv6 term DENY_ALL_ELSE then reject
+set policy-options policy-statement GENERIC_PROTECTION term DENY_MARTIANS from prefix-list-filter MARTIANS orlonger
+set policy-options policy-statement GENERIC_PROTECTION term DENY_MARTIANS from prefix-list-filter RFC1918_BLOCKS orlonger
+set policy-options policy-statement GENERIC_PROTECTION term DENY_MARTIANS then reject
+set policy-options policy-statement IMPORT_FROM_TELIA term CATCH_ALL then local-preference 200
+set policy-options policy-statement IMPORT_FROM_TELIA term CATCH_ALL then accept
+set policy-options policy-statement IMPORT_FROM_TELIA term DENY_ALL_ELSE then reject
+set policy-options policy-statement NOTHING then reject

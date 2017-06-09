@@ -1,0 +1,12 @@
+import sys
+import os
+#
+# User List
+usernames = {'Adrian':'12345','John':'GVEST','Richard':'REJ321','Caleb':'875'}
+#
+# User Input Section
+user = input("Please enter your username:")
+
+if user in usernames:
+    pword = usernames.get(user)
+

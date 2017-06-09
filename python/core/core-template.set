@@ -1,0 +1,118 @@
+set system host-name core1.mib
+set system domain-name edgecastcdn.net
+set system time-zone UTC
+set system default-address-selection
+set system no-multicast-echo
+set system no-redirects
+set system no-ping-record-route
+set system no-ping-time-stamp
+set system internet-options icmpv4-rate-limit packet-rate 500
+set system internet-options icmpv4-rate-limit bucket-size 10
+set system internet-options icmpv6-rate-limit packet-rate 500
+set system internet-options icmpv6-rate-limit bucket-size 10
+set system internet-options source-quench
+set system internet-options tcp-drop-synfin-set
+set system internet-options no-tcp-reset drop-all-tcp
+set interfaces ge-0/0/1 unit 0 family inet address 46.22.70.253/24
+set interfaces lo0 unit 1 family inet address 68.232.32.2/24
+set interfaces lo0 unit 1 family inet address 68.232.33.2/24
+set interfaces lo0 unit 1 family inet address 68.232.34.2/24
+set interfaces lo0 unit 1 family inet address 68.232.35.2/24
+set interfaces lo0 unit 1 family inet address 68.232.42.2/24
+set interfaces lo0 unit 1 family inet address 68.232.44.2/24
+set interfaces lo0 unit 1 family inet address 68.232.45.2/24
+set interfaces lo0 unit 1 family inet address 68.232.46.2/24
+set interfaces lo0 unit 1 family inet address 68.232.47.2/24
+set interfaces lo0 unit 1 family inet address 72.21.80.2/24
+set interfaces lo0 unit 1 family inet address 72.21.81.2/24
+set interfaces lo0 unit 1 family inet address 72.21.91.2/24
+set interfaces lo0 unit 1 family inet address 72.21.92.2/24
+set interfaces lo0 unit 1 family inet address 93.184.215.2/24
+set interfaces lo0 unit 1 family inet address 93.184.216.2/24
+set interfaces lo0 unit 1 family inet address 93.184.219.2/24
+set interfaces lo0 unit 1 family inet address 93.184.220.2/24
+set interfaces lo0 unit 1 family inet address 93.184.221.2/24
+set interfaces lo0 unit 1 family inet address 93.184.222.2/24
+set interfaces lo0 unit 1 family inet address 93.184.223.2/24
+set interfaces lo0 unit 1 family inet address 72.21.80.2/24
+set interfaces lo0 unit 1 family inet address 192.16.16.2/24
+set interfaces lo0 unit 1 family inet address 192.30.30.2/24
+set interfaces lo0 unit 1 family inet address 192.229.150.2/24
+set interfaces lo0 unit 1 family inet address 192.229.151.2/24
+set interfaces lo0 unit 1 family inet address 192.229.254.2/24
+set interfaces lo0 unit 1 family inet address 192.229.255.2/24
+set interfaces lo0 unit 1 family inet address 198.7.29.2/24
+set policy-options prefix-list ANYCAST 68.232.32.0/24
+set policy-options prefix-list ANYCAST 68.232.33.0/24
+set policy-options prefix-list ANYCAST 68.232.34.0/24
+set policy-options prefix-list ANYCAST 68.232.35.0/24
+set policy-options prefix-list ANYCAST 68.232.42.0/24
+set policy-options prefix-list ANYCAST 68.232.44.0/24
+set policy-options prefix-list ANYCAST 68.232.45.0/24
+set policy-options prefix-list ANYCAST 68.232.46.0/24
+set policy-options prefix-list ANYCAST 68.232.47.0/24
+set policy-options prefix-list ANYCAST 72.21.80.0/24
+set policy-options prefix-list ANYCAST 72.21.81.0/24
+set policy-options prefix-list ANYCAST 72.21.91.0/24
+set policy-options prefix-list ANYCAST 72.21.92.0/24
+set policy-options prefix-list ANYCAST 93.184.215.0/24
+set policy-options prefix-list ANYCAST 93.184.216.0/24
+set policy-options prefix-list ANYCAST 93.184.219.0/24
+set policy-options prefix-list ANYCAST 93.184.220.0/24
+set policy-options prefix-list ANYCAST 93.184.221.0/24
+set policy-options prefix-list ANYCAST 93.184.222.0/24
+set policy-options prefix-list ANYCAST 93.184.223.0/24
+set policy-options prefix-list CHM_LOCAL 46.22.70.0/24
+set policy-options prefix-list ANYCAST_DNS 72.21.80.0/24
+set policy-options prefix-list ANYCAST_DNS 192.16.16.0/24
+set policy-options prefix-list ANYCAST_DNS 192.30.30.0/24
+set policy-options prefix-list ANYCAST_DNS 192.229.150.0/24
+set policy-options prefix-list ANYCAST_DNS 192.229.151.0/24
+set policy-options prefix-list ANYCAST_DNS 192.229.254.0/23
+set policy-options prefix-list ANYCAST_DNS 192.229.254.0/24
+set policy-options prefix-list ANYCAST_DNS 192.229.255.0/24
+set policy-options prefix-list ANYCAST_DNS 198.7.29.0/24
+set policy-options prefix-list CHM_LOCAL 46.22.70.0/24
+set policy-options prefix-list CHM_LOCAL 172.16.155.0/24
+set policy-options prefix-list CHM_LOCAL 192.229.225.0/24
+set policy-options prefix-list CHN_LOCAL 172.16.155.0/24
+set policy-options prefix-list CHN_LOCAL 192.229.225.0/24
+set policy-options policy-statement DIRECTORS from route-filter 46.22.70.0/24 exact
+set policy-options policy-statement DIRECTORS from route-filter 46.22.72.0/24 exact
+set policy-options policy-statement DIRECTORS from route-filter 93.184.208.0/24 exact
+set policy-options policy-statement DIRECTORS from route-filter 93.184.209.0/24 exact
+set policy-options policy-statement DIRECTORS from route-filter 72.21.88.0/24 exact
+set policy-options policy-statement DIRECTORS from route-filter 72.21.93.0/24 exact
+set policy-options policy-statement DIRECTORS from route-filter 108.161.252.0/24 exact
+set policy-options policy-statement DIRECTORS from route-filter 108.161.240.0/24 exact
+set policy-options policy-statement DIRECTORS from route-filter 72.21.83.0/24 exact
+set policy-options policy-statement DIRECTORS from route-filter 108.161.254.0/24 exact
+set policy-options policy-statement EXPORT_CHM term EBGP from prefix-list CHM_LOCAL
+set policy-options policy-statement EXPORT_CHM term EBGP then accept
+set policy-options policy-statement EXPORT_CHN term EBGP from prefix-list CHN_LOCAL
+set policy-options policy-statement EXPORT_CHN term EBGP then accept
+set policy-options policy-statement EXPORT_TO_ANYCAST term EBGP from prefix-list ANYCAST
+set policy-options policy-statement EXPORT_TO_ANYCAST term EBGP then accept
+set policy-options policy-statement EXPORT_TO_ANYCAST_DNS term EBGP from prefix-list ANYCAST_DNS
+set policy-options policy-statement EXPORT_TO_ANYCAST_DNS term EBGP then accept
+set policy-options policy-statement EXPORT_TO_CHM term EBGP from prefix-list CHM_LOCAL
+set policy-options policy-statement EXPORT_TO_CHM term EBGP then accept
+set policy-options policy-statement EXPORT_TO_CHN term EBGP from prefix-list CHN_LOCAL
+set policy-options policy-statement EXPORT_TO_CHN term EBGP then accept
+set policy-options policy-statement NOTHING then reject
+set routing-options static route 0.0.0.0/0 next-hop 172.16.155.254
+set routing-options static route 0.0.0.0/0 qualified-next-hop 172.16.155.253 preference 120
+set routing-options autonomous-system 5000001
+set protocols bgp path-selection always-compare-med
+set protocols bgp local-as 5000001
+set protocols bgp group BORDERS type external
+set protocols bgp group BORDERS description BORDER1.MIM
+set protocols bgp group BORDERS export EXPORT_TO_CHM
+set protocols bgp group BORDERS export EXPORT_TO_CHN
+set protocols bgp group BORDERS export EXPORT_TO_ANYCAST
+set protocols bgp group BORDERS export EXPORT_TO_ANYCAST_DNS
+set protocols bgp group BORDERS export NOTHING
+set protocols bgp group BORDERS local-as 65401
+set protocols bgp group BORDERS local-as no-prepend-global-as
+set protocols bgp group BORDERS neighbor 172.16.155.254 peer-as 15133
+set protocols bgp group BORDERS neighbor 172.16.155.253 peer-as 15133
