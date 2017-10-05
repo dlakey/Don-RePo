@@ -1,0 +1,43 @@
+---
+- hosts: level3
+  gather_facts: no
+  connection: local
+
+  tasks:
+  - name: Obtain Login
+    include_vars: pass.yaml
+
+  - name: Define Provider
+    set_fact:
+      provider:
+        host: "{{ inventory_hostname }}"
+        username: "{{ creds['username'] }}"
+        password: "{{ creds['password'] }}"
+        auth_pass: "{{ creds['auth_pass'] }}"
+
+  - name: Add Loopback Interface and IP address
+    iosxr_config:
+      lines:
+        - description Loopback 100
+        - ip address 12.25.10.1 255.255.255.0
+      parents: interface loopback100
+      lines:
+        - description Loopback 200
+        - ip address 12.25.11.1 255.255.255.0
+      parents: interface loopback200
+      lines:
+        - 'router bgp 1950'
+        - 'address-family ipv4 unicast'
+        - 'network 12.25.10.0/24'
+        - 'network 12.25.11.0/24'
+      provider: "{{ provider }}"
+      authorize: yes
+
+  - name: Show Interface Status
+    iosxr_command:
+      commands:
+        - show ip interface brief 
+      provider: "{{ provider }}"
+      authorize: yes
+    register: output
+  - debug: var=banner.stdout_lines

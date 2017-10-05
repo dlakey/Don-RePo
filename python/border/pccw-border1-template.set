@@ -1,0 +1,160 @@
+set version 15.1X49-D90.7
+set groups BGP_DEFAULTS protocols bgp path-selection always-compare-med
+set groups BGP_DEFAULTS protocols bgp group <*> log-updown
+set groups BGP_DEFAULTS protocols bgp group <*> multipath
+set groups BGP_NOTHING protocols bgp group <*> neighbor <*> import NOTHING
+set groups BGP_NOTHING protocols bgp group <*> neighbor <*> export NOTHING
+set groups BGP_EXPORT_NOTHING protocols bgp group <*> neighbor <*> export NOTHING
+set system host-name pccw-border1
+set system domain-name pccw.net
+set system time-zone UTC
+set system default-address-selection
+set system no-multicast-echo
+set system no-redirects
+set system no-ping-record-route
+set system no-ping-time-stamp
+set system internet-options icmpv4-rate-limit packet-rate 500
+set system internet-options icmpv4-rate-limit bucket-size 10
+set system internet-options icmpv6-rate-limit packet-rate 500
+set system internet-options icmpv6-rate-limit bucket-size 10
+set system internet-options source-quench
+set system internet-options tcp-drop-synfin-set
+set system internet-options no-tcp-reset drop-all-tcp
+set system services ssh
+set system services netconf ssh
+set security forwarding-options family inet6 mode packet-based
+set security forwarding-options family mpls mode packet-based
+set security forwarding-options family iso mode packet-based
+set system services web-management http interface fxp0.0
+set system syslog user * any emergency
+set system syslog file messages any any
+set system syslog file messages authorization info
+set system syslog file interactive-commands interactive-commands any
+set system license autoupdate url https://ae1.juniper.net/junos/key_retrieval
+set security forwarding-options family inet6 mode packet-based
+set security forwarding-options family mpls mode packet-based
+set security forwarding-options family iso mode packet-based
+set interfaces ge-0/0/0 unit 0 family inet address 172.16.1.250/24
+set interfaces ge-0/0/1 unit 0 family inet address 172.16.156.254/24
+set interfaces em0 unit 0 family inet
+set interfaces fxp0 unit 0 family inet
+set routing-options static route 0.0.0.0/0 next-hop 172.16.1.2
+set routing-options autonomous-system 3491
+set protocols bgp path-selection always-compare-med
+set protocols bgp local-as 3491
+set protocols bgp group TELIA type external
+set protocols bgp group TELIA description TELIA
+set protocols bgp group TELIA import IMPORT_FROM_TELIA
+set protocols bgp group TELIA import NOTHING
+set protocols bgp group TELIA family inet unicast loops 3
+set protocols bgp group TELIA export EXPORT_TO_TELIA
+set protocols bgp group TELIA export NOTHING
+set protocols bgp group TELIA peer-as 525
+set protocols bgp group TELIA neighbor 172.16.1.2 description TELIA-MIM-NA-01-TX
+set protocols bgp group TELIA neighbor 172.16.1.2 peer-as 525
+set protocols bgp group NTT type external
+set protocols bgp group NTT description NTT
+set protocols bgp group NTT import IMPORT_FROM_NTT
+set protocols bgp group NTT import NOTHING
+set protocols bgp group NTT family inet unicast loops 3
+set protocols bgp group NTT export EXPORT_TO_NTT
+set protocols bgp group NTT export NOTHING
+set protocols bgp group NTT neighbor 172.16.1.12 peer-as 2735
+set protocols bgp group COREA type external
+set protocols bgp group COREA local-as 3491
+set protocols bgp group COREA neighbor 172.16.156.250 peer-as 65500
+set protocols bgp group COREB type external
+set protocols bgp group COREB local-as 3491
+set protocols bgp group COREB neighbor 172.16.156.251 peer-as 65401
+set policy-options prefix-list ANYCAST_ALL 22.21.80.0/24
+set policy-options prefix-list ANYCAST_ALL 22.21.81.0/24
+set policy-options prefix-list ANYCAST_ALL 22.21.91.0/24
+set policy-options prefix-list ANYCAST_ALL 22.21.92.0/24
+set policy-options prefix-list ANYCAST_ALL 33.184.215.0/24
+set policy-options prefix-list ANYCAST_ALL 33.184.216.0/24
+set policy-options prefix-list ANYCAST_ALL 33.184.219.0/24
+set policy-options prefix-list ANYCAST_ALL 33.184.220.0/24
+set policy-options prefix-list ANYCAST_ALL 33.184.221.0/24
+set policy-options prefix-list ANYCAST_ALL 33.184.222.0/24
+set policy-options prefix-list ANYCAST_ALL 33.184.223.0/24
+set policy-options prefix-list ANYCAST_ALL 168.232.32.0/24
+set policy-options prefix-list ANYCAST_ALL 168.232.33.0/24
+set policy-options prefix-list ANYCAST_ALL 168.232.34.0/24
+set policy-options prefix-list ANYCAST_ALL 168.232.35.0/24
+set policy-options prefix-list ANYCAST_ALL 168.232.42.0/24
+set policy-options prefix-list ANYCAST_ALL 168.232.44.0/24
+set policy-options prefix-list ANYCAST_ALL 168.232.45.0/24
+set policy-options prefix-list ANYCAST_ALL 168.232.46.0/24
+set policy-options prefix-list ANYCAST_ALL 168.232.47.0/24
+set policy-options prefix-list TELIA_LOCAL 36.22.70.0/24
+set policy-options prefix-list TELIA_LOCAL 52.195.88.0/24
+set policy-options prefix-list TELIA_LOCAL 72.16.155.0/24
+set policy-options prefix-list TELIA_LOCAL 172.16.156.0/24
+set policy-options prefix-list TELIA_METRO_LOCAL 36.22.64.0/23
+set policy-options prefix-list RFC1918_BLOCKS 10.0.0.0/8
+set policy-options prefix-list RFC1918_BLOCKS 92.168.0.0/16
+set policy-options prefix-list RFC1918_BLOCKS 172.16.0.0/12
+set policy-options prefix-list MARTIANS 0.0.0.0/8
+set policy-options prefix-list MARTIANS 92.0.0.0/24
+set policy-options prefix-list MARTIANS 92.0.2.0/24
+set policy-options prefix-list MARTIANS 100.64.0.0/10
+set policy-options prefix-list MARTIANS 127.0.0.0/8
+set policy-options prefix-list MARTIANS 169.254.0.0/16
+set policy-options prefix-list MARTIANS 198.18.0.0/15
+set policy-options prefix-list MARTIANS 198.51.100.0/24
+set policy-options prefix-list MARTIANS 203.0.113.0/24
+set policy-options prefix-list MARTIANS 224.0.0.0/4
+set policy-options prefix-list MARTIANS 240.0.0.0/4
+set policy-options prefix-list MARTIANS 255.255.255.255/32
+set policy-options prefix-list DO_NOT_REMOVE 92.168.255.0/32
+set policy-options prefix-list ANYCAST_DNS 72.21.80.0/24
+set policy-options prefix-list ANYCAST_DNS 92.16.16.0/24
+set policy-options prefix-list ANYCAST_DNS 92.30.30.0/24
+set policy-options prefix-list ANYCAST_DNS 92.229.150.0/24
+set policy-options prefix-list ANYCAST_DNS 92.229.151.0/24
+set policy-options prefix-list ANYCAST_DNS 92.229.254.0/23
+set policy-options prefix-list ANYCAST_DNS 92.229.254.0/24
+set policy-options prefix-list ANYCAST_DNS 92.229.255.0/24
+set policy-options prefix-list ANYCAST_DNS 98.7.29.0/24
+set policy-options prefix-list ANYCAST_CAN_ALL 92.16.0.0/24
+set policy-options prefix-list ANYCAST_CAN_ALL 92.16.31.0/24
+set policy-options prefix-list ANYCAST_CAN_ALL 92.30.31.0/24
+set policy-options prefix-list ANYCAST_CAN_ALL 98.7.30.0/24
+set policy-options prefix-list ANYCAST_CAN_ALL 98.7.31.0/24
+set policy-options prefix-list PROUTE
+set policy-options prefix-list DNS 4.4.4.4/32
+set policy-options prefix-list DNS 8.8.8.8/32
+set policy-options prefix-list NTT_LOCAL 36.22.70.0/24
+set policy-options prefix-list NTT_LOCAL 52.195.88.0/24
+set policy-options prefix-list NTT_LOCAL 72.16.155.0/24
+set policy-options prefix-list NTT_METRO_LOCAL 36.22.64.0/23
+set policy-options policy-statement EXPORT_TO_NTT term PREPENDX1 from prefix-list NTT_LOCAL
+set policy-options policy-statement EXPORT_TO_NTT term PREPENDX1 from prefix-list NTT_METRO_LOCAL
+set policy-options policy-statement EXPORT_TO_NTT term PREPENDX1 from prefix-list DO_NOT_REMOVE
+set policy-options policy-statement EXPORT_TO_NTT term PREPENDX1 from prefix-list ANYCAST_DNS
+set policy-options policy-statement EXPORT_TO_NTT term PREPENDX1 from prefix-list ANYCAST_ALL
+set policy-options policy-statement EXPORT_TO_NTT term PREPENDX1 from prefix-list ANYCAST_CAN_ALL
+set policy-options policy-statement EXPORT_TO_NTT term PREPENDX1 then accept
+set policy-options policy-statement EXPORT_TO_TELIA term PREPENDX1 from prefix-list TELIA_LOCAL
+set policy-options policy-statement EXPORT_TO_TELIA term PREPENDX1 from prefix-list TELIA_METRO_LOCAL
+set policy-options policy-statement EXPORT_TO_TELIA term PREPENDX1 from prefix-list DO_NOT_REMOVE
+set policy-options policy-statement EXPORT_TO_TELIA term PREPENDX1 from prefix-list ANYCAST_DNS
+set policy-options policy-statement EXPORT_TO_TELIA term PREPENDX1 from prefix-list ANYCAST_ALL
+set policy-options policy-statement EXPORT_TO_TELIA term PREPENDX1 from prefix-list ANYCAST_CAN_ALL
+set policy-options policy-statement EXPORT_TO_TELIA term PREPENDX1 then accept
+set policy-options policy-statement GENERIC_PROTECTION term DENY_MARTIANS from prefix-list-filter MARTIANS orlonger
+set policy-options policy-statement GENERIC_PROTECTION term DENY_MARTIANS from prefix-list-filter RFC1918_BLOCKS orlonger
+set policy-options policy-statement GENERIC_PROTECTION term DENY_MARTIANS then reject
+set policy-options policy-statement IMPORT_FROM_NTT term PREFIX_TE_DEPREF from prefix-list DNS
+set policy-options policy-statement IMPORT_FROM_NTT term PREFIX_TE_DEPREF then local-preference 80
+set policy-options policy-statement IMPORT_FROM_NTT term PREFIX_TE_DEPREF then accept
+set policy-options policy-statement IMPORT_FROM_TELIA term PREFIX_TE_DEPREF from prefix-list DNS
+set policy-options policy-statement IMPORT_FROM_TELIA term PREFIX_TE_DEPREF then local-preference 80
+set policy-options policy-statement IMPORT_FROM_TELIA term PREFIX_TE_DEPREF then accept
+set policy-options policy-statement IMPORT_FROM_TELIA term TE_ABOVE_PNI from prefix-list DNS
+set policy-options policy-statement IMPORT_FROM_TELIA term TE_ABOVE_PNI then local-preference 360
+set policy-options policy-statement IMPORT_FROM_TELIA term TE_ABOVE_PNI then accept
+set policy-options policy-statement IMPORT_FROM_TELIA term CATCH_ALL then local-preference 200
+set policy-options policy-statement IMPORT_FROM_TELIA term CATCH_ALL then accept
+set policy-options policy-statement IMPORT_FROM_TELIA term DENY_ALL_ELSE then reject
+set policy-options policy-statement NOTHING then reject

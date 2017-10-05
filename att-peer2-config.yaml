@@ -1,0 +1,32 @@
+---
+- hosts: att-peer2
+  gather_facts: no
+  connection: local
+
+  tasks:
+  - name: Obtain Login
+    include_vars: pass.yaml
+
+  - name: Define Provider
+    set_fact:
+      provider:
+        host: "{{ inventory_hostname }}"
+        username: "{{ creds['username'] }}"
+        password: "{{ creds['password'] }}"
+        auth_pass: "{{ creds['auth_pass'] }}"
+
+  - name: ATT Peer Router BGP Config
+    ios_config:
+      provider: "{{ provider }}"
+      authorize: yes
+      lines:
+        - router bgp 2018
+        - address-family ipv4 unicast
+        - network {{ network }} mask {{ mask32 }}
+        - network {{ network1 }} mask {{ mask32 }}
+        - network {{ network2 }} mask {{ mask32 }}
+        - network {{ network3 }} mask {{ mask32 }}
+        - network {{ network4 }} mask {{ mask32 }}
+        - network {{ network5 }} mask {{ mask32 }}
+        - network {{ network6 }} mask {{ mask32 }}       
+      match: exact

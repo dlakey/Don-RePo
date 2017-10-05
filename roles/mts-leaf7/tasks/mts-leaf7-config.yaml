@@ -1,0 +1,16 @@
+  - name: Obtain Login
+    include_vars: pass.yaml
+
+  - name: Define Leaf7 Provider
+    set_fact:
+      provider:
+        host: "{{ inventory_hostname }}"
+        username: "{{ creds['username'] }}"
+        password: "{{ creds['password'] }}"
+        auth_pass: "{{ creds['auth_pass'] }}"
+
+  - name: MTS Leaf7 Config
+    ios_config:
+      provider: "{{ provider }}"
+      authorize: yes
+      src: "~/github/don-repo/roles/mts-leaf7/files/mts-leaf7.cfg"

@@ -1,0 +1,7 @@
+---
+- hosts: ios
+  gather_facts: no
+  connection: local
+    
+  roles:
+    - role: sw3

@@ -1,0 +1,793 @@
+terminal length 0
+Passadena_SW-3#show ip interface brief
+Interface              IP-Address      OK? Method Status                Protocol
+Vlan1                  24.100.1.4      YES NVRAM  up                    up      
+Vlan10                 172.16.10.1     YES NVRAM  up                    up      
+Vlan33                 unassigned      YES NVRAM  up                    up      
+Vlan34                 172.16.34.1     YES NVRAM  up                    up      
+Vlan35                 172.16.35.1     YES NVRAM  up                    up      
+Vlan40                 172.23.235.254  YES NVRAM  up                    up      
+Vlan45                 172.16.145.2    YES NVRAM  up                    up      
+Vlan50                 172.16.1.2      YES NVRAM  up                    up      
+Vlan51                 172.16.2.2      YES NVRAM  up                    up      
+Vlan55                 unassigned      YES NVRAM  up                    up      
+Vlan60                 172.16.60.1     YES NVRAM  up                    up      
+Vlan100                172.16.100.1    YES NVRAM  up                    up      
+Vlan101                172.16.101.1    YES NVRAM  up                    up      
+Vlan114                172.16.114.1    YES NVRAM  up                    up      
+Vlan150                172.16.150.1    YES NVRAM  up                    up      
+Vlan200                192.168.0.254   YES NVRAM  up                    up      
+Vlan240                10.200.240.1    YES NVRAM  up                    up      
+Vlan241                10.200.241.1    YES NVRAM  up                    up      
+Vlan301                unassigned      YES NVRAM  up                    up      
+Vlan302                10.60.2.6       YES NVRAM  up                    up      
+Vlan303                unassigned      YES NVRAM  up                    up      
+Vlan402                192.168.2.254   YES NVRAM  up                    up      
+Vlan403                192.168.3.254   YES NVRAM  up                    up      
+Vlan404                192.168.7.254   YES NVRAM  up                    up      
+Vlan405                192.168.13.1    YES NVRAM  up                    up      
+Vlan950                172.16.244.1    YES NVRAM  up                    up      
+GigabitEthernet2/0/1   unassigned      YES unset  down                  down    
+GigabitEthernet2/0/2   unassigned      YES unset  down                  down    
+GigabitEthernet2/0/3   unassigned      YES unset  down                  down    
+GigabitEthernet2/0/4   unassigned      YES unset  down                  down    
+GigabitEthernet2/0/5   unassigned      YES unset  down                  down    
+GigabitEthernet2/0/6   unassigned      YES unset  down                  down    
+GigabitEthernet2/0/7   unassigned      YES unset  down                  down    
+GigabitEthernet2/0/8   unassigned      YES unset  down                  down    
+GigabitEthernet2/0/9   unassigned      YES unset  down                  down    
+GigabitEthernet2/0/10  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/11  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/12  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/13  unassigned      YES unset  up                    up      
+GigabitEthernet2/0/14  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/15  12.129.115.137  YES NVRAM  down                  down    
+GigabitEthernet2/0/16  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/17  unassigned      YES unset  administratively down down    
+GigabitEthernet2/0/18  unassigned      YES unset  up                    up      
+GigabitEthernet2/0/19  unassigned      YES unset  up                    up      
+GigabitEthernet2/0/20  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/21  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/22  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/23  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/24  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/25  unassigned      YES unset  up                    up      
+GigabitEthernet2/0/26  unassigned      YES unset  up                    up      
+GigabitEthernet2/0/27  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/28  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/29  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/30  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/31  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/32  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/33  unassigned      YES unset  up                    up      
+GigabitEthernet2/0/34  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/35  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/36  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/37  unassigned      YES unset  up                    up      
+GigabitEthernet2/0/38  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/39  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/40  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/41  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/42  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/43  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/44  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/45  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/46  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/47  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/48  unassigned      YES unset  up                    up      
+GigabitEthernet2/0/49  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/50  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/51  unassigned      YES unset  down                  down    
+GigabitEthernet2/0/52  unassigned      YES unset  down                  down    
+Port-channel1          unassigned      YES unset  down                  down    
+Port-channel2          unassigned      YES unset  down                  down    
+Loopback55             192.168.1.1     YES NVRAM  up                    up      
+Passadena_SW-3#show run
+Building configuration...
+
+Current configuration : 17688 bytes
+!
+! Last configuration change at 09:19:16 PST Tue Oct 3 2017 by cisco
+! NVRAM config last updated at 17:09:30 PST Mon Oct 2 2017 by cisco
+!
+version 12.2
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+service unsupported-transceiver
+!
+hostname Passadena_SW-3
+!
+boot-start-marker
+boot-end-marker
+!
+!
+enable secret 5 $1$We0g$ceCNngEcPEKdIL0taYMJz/
+!
+username cisco privilege 15 password 0 cisco
+no aaa new-model
+clock timezone PST -8 0
+switch 2 provision ws-c3750g-48ps
+system mtu routing 1500
+!
+flow exporter my-export
+ destination 172.16.145.101
+ transport udp 2055
+!
+ip routing
+no ip domain-lookup
+!
+ip dhcp excluded-address 172.16.34.1 172.16.34.49
+ip dhcp excluded-address 172.16.34.101 172.16.34.254
+ip dhcp excluded-address 172.16.244.1 172.16.244.160
+ip dhcp excluded-address 172.16.60.1 172.16.60.150
+ip dhcp excluded-address 172.16.165.1 172.16.165.50
+ip dhcp excluded-address 172.16.35.1 172.16.35.20
+ip dhcp excluded-address 172.16.100.1 172.16.100.20
+ip dhcp excluded-address 172.16.101.1 172.16.101.20
+ip dhcp excluded-address 172.16.114.1 172.16.114.50
+ip dhcp excluded-address 172.16.145.1 172.16.145.150
+ip dhcp excluded-address 172.16.33.1 172.16.33.49
+ip dhcp excluded-address 192.168.3.1 192.168.3.100
+ip dhcp excluded-address 192.168.4.1 192.168.4.150
+ip dhcp excluded-address 192.168.13.1 192.168.13.100
+ip dhcp excluded-address 172.16.1.1 172.16.34.49
+ip dhcp excluded-address 172.16.155.1 172.16.155.49
+ip dhcp excluded-address 192.168.2.1 192.168.2.100
+ip dhcp excluded-address 192.168.0.1 192.168.0.100
+!
+ip dhcp pool CM-Wireless
+   network 172.16.34.0 255.255.255.0
+   default-router 172.16.34.1 
+!
+ip dhcp pool LA-Wireless
+   network 172.16.165.0 255.255.255.0
+   default-router 172.16.244.1 
+!
+ip dhcp pool Voice
+   network 172.16.60.0 255.255.255.0
+   default-router 172.16.60.1 
+   option 150 ip 172.16.145.60 
+!
+ip dhcp pool Wireless-Data
+   network 172.16.100.0 255.255.255.0
+   default-router 172.16.100.1 
+   dns-server 172.16.145.10 8.8.8.8 
+!
+ip dhcp pool Wireless-Guest
+   network 172.16.101.0 255.255.255.0
+   default-router 172.16.101.1 
+   dns-server 172.16.145.10 8.8.8.8 
+!
+ip dhcp pool WAP
+   network 172.16.35.0 255.255.255.0
+   default-router 172.16.35.1 
+   option 43 hex f104.ac10.220a
+!
+ip dhcp pool PA-Wireless
+   network 172.16.114.0 255.255.254.0
+   default-router 172.16.114.1 
+!
+ip dhcp pool ComNet1
+   network 172.16.33.0 255.255.255.0
+   default-router 172.16.33.1 
+!
+ip dhcp pool ETS-WAP
+   network 192.168.3.0 255.255.255.0
+   default-router 192.168.3.254 
+   option 43 hex f104.ac10.220a
+!
+ip dhcp pool ETS-Wireless
+   network 192.168.4.0 255.255.252.0
+   default-router 192.168.7.254 
+   dns-server 172.16.145.10 8.8.8.8 
+   option 150 ip 172.16.145.60 
+!
+ip dhcp pool ETS-Test
+   network 192.168.13.0 255.255.255.0
+   default-router 192.168.13.1 
+!
+ip dhcp pool Flat1
+   network 172.16.1.0 255.255.255.0
+   default-router 172.16.1.1 
+!
+ip dhcp pool Mgmt
+   network 172.16.155.0 255.255.255.0
+   default-router 172.16.155.1 
+!
+ip dhcp pool EMS-WAP
+   network 192.168.2.0 255.255.255.0
+   default-router 192.168.2.254 
+   option 43 hex f104.ac10.2215
+!
+ip dhcp pool oob
+   network 192.168.0.0 255.255.255.0
+   default-router 192.168.0.254 
+!
+!
+ip multicast-routing distributed
+!
+mls qos map cos-dscp 0 8 16 24 32 46 48 56
+mls qos srr-queue input bandwidth 70 30
+mls qos srr-queue input threshold 1 80 90
+mls qos srr-queue input priority-queue 2 bandwidth 30
+mls qos srr-queue input cos-map queue 1 threshold 2 3
+mls qos srr-queue input cos-map queue 1 threshold 3 6 7
+mls qos srr-queue input cos-map queue 2 threshold 1 4
+mls qos srr-queue input dscp-map queue 1 threshold 2 24
+mls qos srr-queue input dscp-map queue 1 threshold 3 48 49 50 51 52 53 54 55
+mls qos srr-queue input dscp-map queue 1 threshold 3 56 57 58 59 60 61 62 63
+mls qos srr-queue input dscp-map queue 2 threshold 3 32 33 40 41 42 43 44 45
+mls qos srr-queue input dscp-map queue 2 threshold 3 46 47
+mls qos srr-queue output cos-map queue 1 threshold 3 4 5
+mls qos srr-queue output cos-map queue 2 threshold 1 2
+mls qos srr-queue output cos-map queue 2 threshold 2 3
+mls qos srr-queue output cos-map queue 2 threshold 3 6 7
+mls qos srr-queue output cos-map queue 3 threshold 3 0
+mls qos srr-queue output cos-map queue 4 threshold 3 1
+mls qos srr-queue output dscp-map queue 1 threshold 3 32 33 40 41 42 43 44 45
+mls qos srr-queue output dscp-map queue 1 threshold 3 46 47
+mls qos srr-queue output dscp-map queue 2 threshold 1 16 17 18 19 20 21 22 23
+mls qos srr-queue output dscp-map queue 2 threshold 1 26 27 28 29 30 31 34 35
+mls qos srr-queue output dscp-map queue 2 threshold 1 36 37 38 39
+mls qos srr-queue output dscp-map queue 2 threshold 2 24
+mls qos srr-queue output dscp-map queue 2 threshold 3 48 49 50 51 52 53 54 55
+mls qos srr-queue output dscp-map queue 2 threshold 3 56 57 58 59 60 61 62 63
+mls qos srr-queue output dscp-map queue 3 threshold 3 0 1 2 3 4 5 6 7
+mls qos srr-queue output dscp-map queue 4 threshold 1 8 9 11 13 15
+mls qos srr-queue output dscp-map queue 4 threshold 2 10 12 14
+mls qos queue-set output 1 threshold 1 100 100 50 200
+mls qos queue-set output 1 threshold 2 125 125 100 400
+mls qos queue-set output 1 threshold 3 100 100 100 400
+mls qos queue-set output 1 threshold 4 60 150 50 200
+mls qos queue-set output 1 buffers 15 25 40 20
+mls qos
+!
+crypto pki trustpoint TP-self-signed-4197614080
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-4197614080
+ revocation-check none
+ rsakeypair TP-self-signed-4197614080
+!
+!
+crypto pki certificate chain TP-self-signed-4197614080
+ certificate self-signed 01
+  30820246 308201AF A0030201 02020101 300D0609 2A864886 F70D0101 04050030 
+  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274 
+  69666963 6174652D 34313937 36313430 3830301E 170D3933 30333031 30303034 
+  32355A17 0D323030 31303130 30303030 305A3031 312F302D 06035504 03132649 
+  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D34 31393736 
+  31343038 3030819F 300D0609 2A864886 F70D0101 01050003 818D0030 81890281 
+  8100F7CC 3F5C30C7 35240969 D10B3446 FD7B75F3 121091ED 3DF7BB70 031A838A 
+  1B2B8FC6 8B17BA31 6E470382 320C05EC 24F20C74 D42E059A 6C609848 4C7C4E9E 
+  436406B2 2E687597 813BBD7B 2F1962D5 1465FB4D E60FA7B4 116DB180 4F2FF37F 
+  9D850727 98463A50 B16FDC0E C0E163FE 74E3BBEF 99A250DB B40F04F0 9E3103CD 
+  E9350203 010001A3 6E306C30 0F060355 1D130101 FF040530 030101FF 30190603 
+  551D1104 12301082 0E506173 73616465 6E615F53 572D3330 1F060355 1D230418 
+  30168014 71334A85 7C37743C D1BE44B8 02AF7BEA 06E4ECFE 301D0603 551D0E04 
+  16041471 334A857C 37743CD1 BE44B802 AF7BEA06 E4ECFE30 0D06092A 864886F7 
+  0D010104 05000381 8100DF01 BD3C279A 8D990014 B2B31414 E76A2F91 8F4891E8 
+  5730AACB 01259184 FFA1B89B 6928F1BA 23B57E11 AA946CC6 1E2EE4B5 5FAA4DE2 
+  3BB65979 9A9D7DFF 548F5E56 67ACDE7E 71B44634 60972323 9315CB50 2A2447A0 
+  4E0260E1 669D7AA0 EC8EA5FD 7BAAC93A 71158C8D 17DDCF1C BD76E493 65186C5F 
+  F97DE79B 5EE53794 74C8
+  	quit
+auto qos srnd4
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+!
+!
+!
+!
+!
+!
+!
+interface Loopback55
+ ip address 192.168.1.1 255.255.255.255
+!
+interface Port-channel1
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface Port-channel2
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface GigabitEthernet2/0/1
+ description Python Scripts
+ speed 100
+ duplex full
+ srr-queue bandwidth share 1 30 35 5
+ priority-queue out 
+ mls qos trust cos
+ auto qos trust 
+!
+interface GigabitEthernet2/0/2
+ description Palo Alto FW Outside Link
+ switchport access vlan 50
+ srr-queue bandwidth share 1 30 35 5
+ priority-queue out 
+ mls qos trust cos
+ auto qos trust 
+!
+interface GigabitEthernet2/0/3
+ description Palo Alto Inside Interface
+ switchport access vlan 100
+ srr-queue bandwidth share 1 30 35 5
+ priority-queue out 
+ mls qos trust cos
+ auto qos trust 
+!
+interface GigabitEthernet2/0/4
+ description Python Scripts
+ srr-queue bandwidth share 1 30 35 5
+ priority-queue out 
+ mls qos trust cos
+ auto qos trust 
+!
+interface GigabitEthernet2/0/5
+ description Test workstation
+ switchport access vlan 50
+ srr-queue bandwidth share 1 30 35 5
+ priority-queue out 
+ mls qos trust cos
+ auto qos trust 
+!
+interface GigabitEthernet2/0/6
+ description Python Scripts
+ srr-queue bandwidth share 1 30 35 5
+ priority-queue out 
+ mls qos trust cos
+ auto qos trust 
+!
+interface GigabitEthernet2/0/7
+ description Python Scripts
+ srr-queue bandwidth share 1 30 35 5
+ priority-queue out 
+ mls qos trust cos
+ auto qos trust 
+!
+interface GigabitEthernet2/0/8
+ description Python Scripts
+ srr-queue bandwidth share 1 30 35 5
+ priority-queue out 
+ mls qos trust cos
+ auto qos trust 
+!
+interface GigabitEthernet2/0/9
+ description Python Scripts
+ srr-queue bandwidth share 1 30 35 5
+ priority-queue out 
+ mls qos trust cos
+ auto qos trust 
+!
+interface GigabitEthernet2/0/10
+ description Python Scripts
+ srr-queue bandwidth share 1 30 35 5
+ priority-queue out 
+ mls qos trust cos
+ auto qos trust 
+!
+interface GigabitEthernet2/0/11
+ description Python Scripts
+ srr-queue bandwidth share 1 30 35 5
+ priority-queue out 
+ mls qos trust cos
+ auto qos trust 
+!
+interface GigabitEthernet2/0/12
+ description Python Scripts
+ srr-queue bandwidth share 1 30 35 5
+ priority-queue out 
+ mls qos trust cos
+ auto qos trust 
+!
+interface GigabitEthernet2/0/13
+ description Python Scripts
+ switchport access vlan 45
+ srr-queue bandwidth share 1 30 35 5
+ priority-queue out 
+ mls qos trust cos
+ auto qos trust 
+!
+interface GigabitEthernet2/0/14
+ description Python Scripts
+ switchport access vlan 45
+ srr-queue bandwidth share 1 30 35 5
+ priority-queue out 
+ mls qos trust cos
+ auto qos trust 
+!
+interface GigabitEthernet2/0/15
+ no switchport
+ ip address 12.129.115.137 255.255.255.248
+!
+interface GigabitEthernet2/0/16
+ switchport access vlan 45
+!
+interface GigabitEthernet2/0/17
+ shutdown
+!
+interface GigabitEthernet2/0/18
+ switchport access vlan 45
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 10,45,50,51,55,100
+ switchport mode trunk
+ no cdp enable
+ spanning-tree portfast trunk
+!
+interface GigabitEthernet2/0/19
+ switchport access vlan 45
+!
+interface GigabitEthernet2/0/20
+ switchport access vlan 45
+!
+interface GigabitEthernet2/0/21
+ switchport access vlan 45
+!
+interface GigabitEthernet2/0/22
+ switchport access vlan 45
+!
+interface GigabitEthernet2/0/23
+ switchport access vlan 45
+!
+interface GigabitEthernet2/0/24
+ switchport access vlan 45
+!
+interface GigabitEthernet2/0/25
+ switchport access vlan 60
+!
+interface GigabitEthernet2/0/26
+ switchport access vlan 60
+!
+interface GigabitEthernet2/0/27
+ switchport access vlan 34
+ switchport mode access
+ authentication event no-response action authorize vlan 951
+ authentication port-control auto
+ mab
+ dot1x pae authenticator
+ dot1x timeout quiet-period 3
+ dot1x timeout tx-period 15
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet2/0/28
+ switchport access vlan 60
+!
+interface GigabitEthernet2/0/29
+ switchport access vlan 45
+ spanning-tree portfast
+!
+interface GigabitEthernet2/0/30
+ switchport access vlan 40
+ spanning-tree portfast
+!
+interface GigabitEthernet2/0/31
+ switchport access vlan 35
+ spanning-tree portfast
+!
+interface GigabitEthernet2/0/32
+ switchport access vlan 402
+!
+interface GigabitEthernet2/0/33
+ switchport access vlan 250
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ spanning-tree portfast
+!
+interface GigabitEthernet2/0/34
+ switchport access vlan 402
+!
+interface GigabitEthernet2/0/35
+ switchport access vlan 200
+!
+interface GigabitEthernet2/0/36
+!
+interface GigabitEthernet2/0/37
+ switchport access vlan 35
+!
+interface GigabitEthernet2/0/38
+!
+interface GigabitEthernet2/0/39
+ switchport access vlan 34
+ switchport mode access
+!
+interface GigabitEthernet2/0/40
+ switchport access vlan 34
+ switchport mode access
+!
+interface GigabitEthernet2/0/41
+ switchport access vlan 403
+ switchport mode access
+!
+interface GigabitEthernet2/0/42
+ switchport access vlan 120
+ switchport mode access
+!
+interface GigabitEthernet2/0/43
+ switchport access vlan 200
+ switchport trunk encapsulation dot1q
+ switchport mode access
+!
+interface GigabitEthernet2/0/44
+ switchport access vlan 34
+ switchport mode access
+!
+interface GigabitEthernet2/0/45
+ switchport access vlan 301
+ switchport mode access
+!
+interface GigabitEthernet2/0/46
+ switchport access vlan 302
+ switchport mode access
+!
+interface GigabitEthernet2/0/47
+ switchport access vlan 45
+ switchport trunk encapsulation dot1q
+ switchport mode access
+!
+interface GigabitEthernet2/0/48
+ switchport access vlan 45
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface GigabitEthernet2/0/49
+ switchport access vlan 403
+ switchport mode access
+!
+interface GigabitEthernet2/0/50
+!
+interface GigabitEthernet2/0/51
+ switchport trunk encapsulation dot1q
+ switchport trunk native vlan 403
+ switchport mode trunk
+!
+interface GigabitEthernet2/0/52
+!
+interface Vlan1
+ ip address 24.100.1.4 255.255.255.0
+!
+interface Vlan10
+ ip address 172.16.10.1 255.255.255.0
+!
+interface Vlan33
+ no ip address
+!
+interface Vlan34
+ ip address 172.16.34.1 255.255.255.0
+ ip pim sparse-dense-mode
+!
+interface Vlan35
+ ip address 172.16.35.1 255.255.255.0
+ ip pim sparse-dense-mode
+!
+interface Vlan40
+ ip address 172.23.235.254 255.255.255.0
+ ip pim sparse-dense-mode
+!
+interface Vlan45
+ ip address 172.16.145.2 255.255.255.0
+!
+interface Vlan50
+ ip address 172.16.1.2 255.255.255.0
+!
+interface Vlan51
+ ip address 172.16.2.2 255.255.255.0
+!
+interface Vlan55
+ no ip address
+!
+interface Vlan60
+ ip address 172.16.60.1 255.255.255.0
+!
+interface Vlan100
+ ip address 172.16.100.1 255.255.255.0
+!
+interface Vlan101
+ ip address 172.16.101.1 255.255.255.0
+!
+interface Vlan114
+ ip address 172.16.114.1 255.255.254.0
+!
+interface Vlan150
+ ip address 172.16.150.1 255.255.255.0
+!
+interface Vlan200
+ ip address 192.168.0.254 255.255.255.0
+!
+interface Vlan240
+ ip address 10.200.240.1 255.255.255.0
+!
+interface Vlan241
+ ip address 10.200.241.1 255.255.255.0
+!
+interface Vlan301
+ no ip address
+!
+interface Vlan302
+ ip address 10.60.2.6 255.255.255.252
+!
+interface Vlan303
+ no ip address
+!
+interface Vlan402
+ ip address 192.168.2.254 255.255.255.0
+!
+interface Vlan403
+ ip address 192.168.3.254 255.255.255.0
+!
+interface Vlan404
+ ip address 192.168.7.254 255.255.252.0
+!
+interface Vlan405
+ ip address 192.168.13.1 255.255.255.0
+!
+interface Vlan950
+ ip address 172.16.244.1 255.255.252.0
+!
+router ospf 1
+ network 10.0.0.0 0.0.0.255 area 0
+ network 10.200.240.0 0.0.0.255 area 0
+ network 10.200.241.0 0.0.0.255 area 0
+ network 172.16.33.0 0.0.0.255 area 0
+ network 172.16.34.0 0.0.0.255 area 0
+ network 172.16.35.0 0.0.0.255 area 0
+ network 172.16.60.0 0.0.0.255 area 0
+ network 172.16.100.0 0.0.0.255 area 0
+ network 172.16.101.0 0.0.0.255 area 0
+ network 172.16.114.0 0.0.1.255 area 0
+ network 172.16.145.0 0.0.0.255 area 0
+ network 172.16.150.0 0.0.0.255 area 0
+ network 172.16.155.0 0.0.0.255 area 0
+ network 172.16.165.0 0.0.0.255 area 0
+ network 172.16.240.0 0.0.7.255 area 0
+ network 172.23.235.0 0.0.0.255 area 0
+!
+router bgp 525
+ bgp log-neighbor-changes
+ network 0.0.0.0
+ network 10.0.0.0 mask 255.255.255.0
+ network 12.129.115.136 mask 255.255.255.248
+ network 38.84.73.0 mask 255.255.255.0
+ network 100.9.240.16 mask 255.255.255.248
+ network 172.16.1.0 mask 255.255.255.0
+ network 172.16.34.0 mask 255.255.255.0
+ network 172.16.35.0 mask 255.255.255.0
+ network 172.16.40.0 mask 255.255.255.0
+ network 172.16.60.0 mask 255.255.255.0
+ network 172.16.100.0 mask 255.255.255.0
+ network 172.16.101.0 mask 255.255.255.0
+ network 172.16.114.0 mask 255.255.254.0
+ network 172.16.145.0 mask 255.255.255.0
+ network 172.16.244.0 mask 255.255.252.0
+ network 172.23.235.0 mask 255.255.255.0
+ network 192.168.4.0 mask 255.255.252.0
+ network 204.89.15.4 mask 255.255.255.252
+ neighbor 24.100.1.1 remote-as 3356
+ neighbor 24.100.1.2 remote-as 19893
+ neighbor 24.100.1.3 remote-as 1239
+ neighbor 172.16.1.12 remote-as 2735
+ neighbor 172.16.1.250 remote-as 3491
+ neighbor 172.16.1.253 remote-as 15133
+ neighbor 172.16.1.254 remote-as 15133
+ neighbor 172.16.2.12 remote-as 15133
+ neighbor 172.16.2.21 remote-as 1014
+ neighbor 172.16.2.253 remote-as 15133
+ no auto-summary
+!
+ip http server
+ip http secure-server
+!
+!
+ip pim rp-address 172.16.145.2
+ip route 0.0.0.0 0.0.0.0 172.16.145.1
+ip route 10.15.0.0 255.255.0.0 172.16.100.2
+ip route 10.43.0.0 255.255.0.0 172.16.1.1
+ip route 10.150.0.0 255.255.0.0 172.16.1.57
+ip route 10.175.1.0 255.255.255.0 172.16.1.3
+ip route 10.175.100.0 255.255.255.0 172.16.1.3
+ip route 10.175.101.0 255.255.255.0 172.16.1.3
+ip route 10.175.102.0 255.255.255.0 172.16.1.3
+ip route 10.250.1.0 255.255.255.0 10.60.1.5
+ip route 10.251.1.0 255.255.255.0 10.60.2.5
+ip route 12.250.46.0 255.255.255.0 Null0
+ip route 38.84.73.0 255.255.255.0 204.89.15.6
+ip route 172.16.1.0 255.255.255.0 172.16.100.2
+ip route 172.16.16.0 255.255.255.0 172.16.100.2
+ip route 172.16.17.0 255.255.255.0 172.16.100.2
+ip route 172.16.32.0 255.255.255.0 172.16.100.2
+ip route 172.16.33.0 255.255.255.0 172.16.100.2
+ip route 172.16.48.0 255.255.255.0 172.16.100.2
+ip route 172.16.49.0 255.255.255.0 172.16.100.2
+ip route 172.16.110.0 255.255.255.0 172.16.2.76
+ip route 192.168.1.0 255.255.255.0 100.9.240.18
+ip route 200.14.7.0 255.255.255.0 172.16.1.77
+ip route 201.50.6.0 255.255.255.0 172.16.1.77
+!
+logging esm config
+logging source-interface Vlan45
+logging 172.16.145.238
+!
+snmp-server community cisco RO
+snmp-server community cisco123 RW
+!
+!
+line con 0
+line vty 0 4
+ login local
+ length 0
+line vty 5 15
+ login
+!
+ntp master 3
+ntp server 172.16.145.1 prefer
+end
+
+Passadena_SW-3#show log
+Syslog logging: enabled (0 messages dropped, 0 messages rate-limited, 0 flushes, 0 overruns, xml disabled, filtering disabled)
+
+No Active Message Discriminator.
+
+
+
+No Inactive Message Discriminator.
+
+
+    Console logging: level debugging, 21225 messages logged, xml disabled,
+                     filtering disabled
+    Monitor logging: level debugging, 0 messages logged, xml disabled,
+                     filtering disabled
+    Buffer logging:  level debugging, 21225 messages logged, xml disabled,
+                    filtering disabled
+    Exception Logging: size (4096 bytes)
+    Count and timestamp logging messages: disabled
+    File logging: disabled
+    Persistent logging: disabled
+
+No active filter modules.
+
+    Trap logging: level informational, 21224 message lines logged
+        Logging to 172.16.145.238  (udp port 514, audit disabled,
+              link up),
+              21224 message lines logged, 
+              0 message lines rate-limited, 
+              0 message lines dropped-by-MD, 
+              xml disabled, sequence number disabled
+              filtering disabled
+
+Log Buffer (4096 bytes):
+abitEthernet2/0/13 (45), with dk-sd1.manatt.com FastEthernet1 (1).
+Oct  4 20:55:07.161: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet2/0/13 (45), with dk-sd1.manatt.com FastEthernet1 (1).
+Oct  4 20:56:07.167: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet2/0/13 (45), with dk-sd1.manatt.com FastEthernet1 (1).
+Oct  4 20:57:07.163: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet2/0/13 (45), with dk-sd1.manatt.com FastEthernet1 (1).
+Oct  4 20:58:07.169: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet2/0/13 (45), with dk-sd1.manatt.com FastEthernet1 (1).
+Oct  4 20:59:07.165: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet2/0/13 (45), with dk-sd1.manatt.com FastEthernet1 (1).
+Oct  4 21:00:07.171: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet2/0/13 (45), with dk-sd1.manatt.com FastEthernet1 (1).
+Oct  4 21:01:07.176: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet2/0/13 (45), with dk-sd1.manatt.com FastEthernet1 (1).
+Oct  4 21:02:07.173: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet2/0/13 (45), with dk-sd1.manatt.com FastEthernet1 (1).
+Oct  4 21:03:07.178: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet2/0/13 (45), with dk-sd1.manatt.com FastEthernet1 (1).
+Oct  4 21:04:07.183: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet2/0/13 (45), with dk-sd1.manatt.com FastEthernet1 (1).
+Oct  4 21:05:07.180: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet2/0/13 (45), with dk-sd1.manatt.com FastEthernet1 (1).
+Oct  4 21:06:07.177: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet2/0/13 (45), with dk-sd1.manatt.com FastEthernet1 (1).
+Oct  4 21:07:07.182: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet2/0/13 (45), with dk-sd1.manatt.com FastEthernet1 (1).
+Oct  4 21:08:07.179: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet2/0/13 (45), with dk-sd1.manatt.com FastEthernet1 (1).
+Oct  4 21:09:07.184: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet2/0/13 (45), with dk-sd1.manatt.com FastEthernet1 (1).
+Oct  4 21:10:07.181: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet2/0/13 (45), with dk-sd1.manatt.com FastEthernet1 (1).
+Oct  4 21:11:07.186: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet2/0/13 (45), with dk-sd1.manatt.com FastEthernet1 (1).
+Oct  4 21:12:07.191: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet2/0/13 (45), with dk-sd1.manatt.com FastEthernet1 (1).
+Oct  4 21:13:07.188: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet2/0/13 (45), with dk-sd1.manatt.com FastEthernet1 (1).
+Oct  4 21:14:07.193: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet2/0/13 (45), with dk-sd1.manatt.com FastEthernet1 (1).
+Oct  4 21:15:07.190: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet2/0/13 (45), with dk-sd1.manatt.com FastEthernet1 (1).
+Oct  4 21:16:07.195: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet2/0/13 (45), with dk-sd1.manatt.com FastEthernet1 (1).
+Oct  4 21:17:07.192: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet2/0/13 (45), with dk-sd1.manatt.com FastEthernet1 (1).
+Oct  4 21:18:07.197: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet2/0/13 (45), with dk-sd1.manatt.com FastEthernet1 (1).
+Oct  4 21:19:07.194: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet2/0/13 (45), with dk-sd1.manatt.com FastEthernet1 (1).
+Oct  4 21:20:07.199: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet2/0/13 (45), with dk-sd1.manatt.com FastEthernet1 (1).
+Passadena_SW-3#

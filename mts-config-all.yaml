@@ -1,0 +1,13 @@
+---
+- include: mts-edge1.yaml
+- include: mts-core1.yaml
+- include: mts-core2.yaml
+- include: mts-spine1.yaml
+- include: mts-sw-config.yaml
+- include: mts-leaf1.yaml
+- include: mts-leaf2.yaml
+- include: mts-leaf3.yaml
+- include: mts-leaf5.yaml
+- include: mts-leaf6.yaml
+- include: mts-leaf7.yaml
+- include: mts-leaf8.yaml

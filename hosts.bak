@@ -4,32 +4,80 @@
 # localhost is used to configure the loopback interface
 # when the system is booting.  Do not change this entry.
 ##
+[local]
+127.0.0.0
+
 [ios]
-192.168.7.254
+172.16.145.2
 
-[Verizon-Peer1]
-10.43.50.2
+[managed-sw1]
+172.16.2.76
 
-[Verizon-Peer2]
-10.43.50.3
+[level3]
+122.100.15.1
+
+[mts-edge1]
+172.16.110.1
+
+[mts-core1]
+172.16.110.2
+
+[mts-core2]
+172.16.110.3
+
+[mts-spine1]
+172.16.110.4
+
+[mts-spine2]
+172.16.110.5
+
+[mts-leaf1]
+172.16.110.6
+
+[mts-leaf2]
+172.16.110.7
+
+[mts-leaf3]
+172.16.110.8
+
+[mts-leaf4]
+172.16.110.9
+
+[mts-leaf5]
+172.16.110.10
+
+[mts-leaf6]
+172.16.110.11
+
+[mts-leaf7]
+172.16.110.12
+
+[mts-leaf8]
+172.16.110.13
+
+[verizon-peer2]
+172.16.1.12
+
+[pccw-border1]
+172.16.1.250
+
+[pccw-corea]
+172.16.156.250
 
 [zayo]
 10.43.50.4
 
-[att-peer1]
-10.43.50.6
+[att-sw1]
+12.5.100.1
 
 [att-peer2]
-10.43.50.7
-
-[level3]
-10.43.50.5
+69.20.0.2
 
 [cox]
 10.43.50.8
 
 [comcast]
-10.43.50.9
+104.77.107.1
 
 [etsrt1]
 10.43.50.2
@@ -42,6 +90,9 @@
 
 [etscore]
 10.43.50.5
+
+[ubuntu]
+vm1 ansible_ssh_host=172.16.145.101 ansible_ssh_user=dlakey ansible_ssh_private_key_file=~/.ssh/known_hosts 
 
 [etsswitch]
 10.43.50.6

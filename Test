@@ -1,0 +1,35 @@
+
+
+access-list Gardena-Outside_9_cryptomap extended permit ip 10.157.0.0 255.255.0.0 192.168.140.0 255.255.255.0
+access-list Gardena-Outside_9_cryptomap extended permit ip 10.158.0.0 255.255.0.0 192.168.140.0 255.255.255.0
+
+access-list Gardena-Inside_nat0_outbound extended permit ip 10.157.0.0 255.255.0.0 192.168.140.0 255.255.255.0
+access-list Gardena-Inside_nat0_outbound extended permit ip 10.158.0.0 255.255.0.0 192.168.140.0 255.255.255.0
+
+
+sh access-list Gardena-Outside_9_cryptomap
+
+
+
+
+
+
+
+access-list outside_cryptomap extended permit ip 192.168.140.0 255.255.255.0 10.157.0.0 255.255.0.0
+access-list outside_cryptomap extended permit ip 192.168.140.0 255.255.255.0 10.158.0.0 255.255.0.0
+
+object network Local-Lan2
+ subnet 192.168.140.0 255.255.255.0
+
+
+
+ nat (inside,outside) source static Local-Lan2 Local-Lan2 destination static EDI-Lan EDI-Lan
+
+
+dhcpd address 192.168.140.5-192.168.140.30 inside
+dhcpd dns 8.8.8.8 10.158.140.227 interface inside
+dhcpd enable inside
+
+
+
+

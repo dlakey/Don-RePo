@@ -1,0 +1,26 @@
+---
+- hosts: level3
+  gather_facts: no
+  connection: local
+
+  tasks:
+  - name: Obtain Login
+    include_vars: pass.yaml
+
+  - name: Define Provider
+    set_fact:
+      provider:
+        host: "{{ inventory_hostname }}"
+        username: "{{ creds['username'] }}"
+        password: "{{ creds['password'] }}"
+        auth_pass: "{{ creds['auth_pass'] }}"
+
+  - name: Get IOS-XR Configuration
+    iosxr_command:
+      commands:
+        - show running-config 
+        - show version
+      provider: "{{ provider }}"
+      authorize: yes
+    register: output
+  - debug: var=banner.stdout_lines

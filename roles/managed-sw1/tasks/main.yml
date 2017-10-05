@@ -1,0 +1,14 @@
+---
+# tasks file for managed-sw1
+- name: Obtain Login
+  include_vars: pass.yaml
+
+- name: Define Provider
+  set_fact:
+    provider:
+      host: "{{ inventory_hostname }}"
+      username: "{{ creds['username'] }}"
+      password: "{{ creds['password'] }}"
+      auth_pass: "{{ creds['auth_pass'] }}"
+
+- include: managed-sw1-config.yaml

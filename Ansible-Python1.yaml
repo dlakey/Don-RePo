@@ -1,0 +1,23 @@
+---
+- hosts: local
+  gather_facts: no
+  connection: local
+
+  tasks:
+  - name: Run Border Python Script
+    command: python border1-config.py
+    args:
+      chdir: ~/github/don-repo/python/border/
+    register: output
+
+  - name: Run Core Python Script 
+    command: python core1-config.py
+    args:
+      chdir: ~/github/don-repo/python/core/
+    register: output
+
+  - debug: var=output.stdout_lines
+
+- include: att-sw1-config.yaml
+- include: att-peer2-config.yaml
+- include: comcast-peer-config.yaml

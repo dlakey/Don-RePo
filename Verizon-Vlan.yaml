@@ -1,0 +1,48 @@
+---
+- hosts: verizon-peer2
+  gather_facts: no
+  connection: local
+
+  tasks:
+  - name: Obtain Login
+    include_vars: pass.yaml
+
+  - name: Define Provider
+    set_fact:
+      provider:
+        host: "{{ inventory_hostname }}"
+        username: "{{ creds['username'] }}"
+        password: "{{ creds['password'] }}"
+        auth_pass: "{{ creds['auth_pass'] }}"
+        transport: nxapi
+
+  - name: Create Vlan and Name
+    nxos_vlan:
+      vlan_id: "{{ item }}"
+      provider: "{{ provider }}"
+    with_items:
+      - 50
+      - 60
+      - 65
+
+  - name: Configure Ports
+    nxos_interface:
+      interface: "{{ item }}"
+      mode: layer2
+      admin_state: up
+      provider: "{{ provider }}"
+    with_items:
+      - "Eth1/7"
+      - "Eth1/8"
+      - "Eth1/9"
+
+  - name: Assign Ports
+    nxos_switchport:
+      interface: "{{ item.interface }}"
+      mode: access
+      access_vlan: "{{ item.vlan }}"
+      provider: "{{ provider }}"
+    with_items:
+      - { interface: Ethernet1/7, vlan: 50 }
+      - { interface: Ethernet1/8, vlan: 60 }
+      - { interface: Ethernet1/9, vlan: 65 }      

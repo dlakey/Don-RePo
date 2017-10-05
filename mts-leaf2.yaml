@@ -1,0 +1,7 @@
+---
+- hosts: mts-leaf2
+  gather_facts: no
+  connection: local
+    
+  roles:
+    - role: mts-leaf2

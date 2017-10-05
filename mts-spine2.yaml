@@ -1,0 +1,7 @@
+---
+- hosts: mts-spine2
+  gather_facts: no
+  connection: local
+    
+  roles:
+    - role: mts-switch-config

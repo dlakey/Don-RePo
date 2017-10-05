@@ -1,5 +1,5 @@
 ---
-- hosts: ios
+- hosts: att-sw1
   gather_facts: no
   connection: local
 
@@ -36,4 +36,4 @@
         - ip address {{ ipaddress6 }} {{ mask24 }}
       match: exact
 
-- include: showrun.yaml
+- include: showint.yaml

@@ -1,25 +1,25 @@
+import sys
 from jnpr.junos import Device
-from jnpr.junos.op.routes import RouteSummaryTable
-
+from jnpr.junos.op.routes import RouteTable
+from getpass import getpass
+from pprint import pprint
+from sys import exit
+from lxml import etree
 
 
 Host = raw_input('Enter Hostname or IP address of Device: ')
 dev = Device(host=Host,user='root',password='Juniper').open()
 
+Peer = raw_input('Enter Peering Device: ')
 
 class style:
    BOLD = '\033[1m'
    END = '\033[0m'
-   
 
-tbl = RouteSummaryTable(dev)
-tbl.get()
+route_table = RouteTable(dev)
 
-# print tbl
-for item in tbl:
-    print 'Border1.chm Route Summary:', item.dests
-    print 'Total Routes:', item.total
-    print 'Total Hiddent Routes:', item.hidden
-    print
+route_table.get(protocol='bgp')
 
-dev.close()
+for key in route_table:
+    if key.nexthop == Peer:
+       print key.name + 'Nexthop: ' + key.nexthop + 'Via: ' + key.via + ' Protocol: ' + key.protocol

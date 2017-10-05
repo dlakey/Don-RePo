@@ -1,0 +1,7 @@
+---
+- hosts: mts-core1
+  gather_facts: no
+  connection: local
+    
+  roles:
+    - role: mts-core1

@@ -1,0 +1,28 @@
+---
+-  name: Configure NXOS devices
+- hosts: verizon-peer2
+  gather_facts: no
+  connection: local
+
+  tasks:
+  - name: Obtain Login
+    include_vars: pass.yaml
+
+  - name: Define Provider
+    set_fact:
+      provider:
+        host: "{{ inventory_hostname }}"
+        username: "{{ creds['username'] }}"
+        password: "{{ creds['password'] }}"
+        auth_pass: "{{ creds['auth_pass'] }}"
+        transport: nxapi
+
+  - name: Configure Interfaces
+    nxos_template:
+      src: interfaces.j2
+      provider: "{{ provider }}"
+ 
+  - name: Configure IP Interfaces
+    nxos_template:
+      src: ipintf.j2
+      provider: "{{ provider }}"

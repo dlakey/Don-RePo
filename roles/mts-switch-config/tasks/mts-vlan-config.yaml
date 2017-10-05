@@ -1,0 +1,16 @@
+  - name: Obtain Login
+    include_vars: pass.yaml
+
+  - name: Define MTS-Spine2 Provider
+    set_fact:
+      provider:
+        host: "{{ inventory_hostname }}"
+        username: "{{ creds['username'] }}"
+        password: "{{ creds['password'] }}"
+        auth_pass: "{{ creds['auth_pass'] }}"
+
+  - name: Switch MTS-Spine2 Config
+    ios_config:
+      provider: "{{ provider }}"
+      authorize: yes
+      src: "~/github/don-repo/roles/mts-switch-config/files/mts-spine2.cfg"

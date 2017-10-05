@@ -1,0 +1,8 @@
+---
+  - name: Run Border Python Script
+    command: python corea-config.py
+    args:
+      chdir: ~/github/don-repo/python/border/
+    register: output
+
+  - debug: var=output.stdout_lines

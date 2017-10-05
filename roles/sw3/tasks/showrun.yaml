@@ -1,0 +1,10 @@
+---
+  - name: Show Run
+    ios_command:
+      provider: "{{ provider }}"
+      authorize: yes
+      commands:
+        - show run
+    register: banner
+
+  - debug: var=banner.stdout_lines

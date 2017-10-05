@@ -1,0 +1,24 @@
+  - name: Obtain Login
+    include_vars: pass.yaml
+
+  - name: Define Provider
+    set_fact:
+      provider:
+        host: "{{ inventory_hostname }}"
+        username: "{{ creds['username'] }}"
+        password: "{{ creds['password'] }}"
+        auth_pass: "{{ creds['auth_pass'] }}"
+
+  - name: Switch Vlan Config
+    ios_config:
+      provider: "{{ provider }}"
+      authorize: yes
+      lines:
+        - no vlan 100
+        - no vlan 101
+        - no vlan 102
+        - no vlan 103
+        - no vlan 104
+        - no vlan 105
+        - no vlan 106
+      match: exact

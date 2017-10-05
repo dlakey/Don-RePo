@@ -1,0 +1,27 @@
+---
+- hosts: local
+  gather_facts: no
+  connection: local
+
+  tasks:
+  - name: Obtain Login
+    include_vars: pass1.yaml
+
+  - name: Define Provider
+    set_fact:
+      provider:
+        host: "{{ inventory_hostname }}"
+        username: "{{ creds['username'] }}"
+        password: "{{ creds['password'] }}"
+        auth_pass: "{{ creds['auth_pass'] }}"
+
+  tasks:
+  - name: Run Border Python Script
+    command: fab host_type
+    args:
+      chdir: ~/github/don-repo
+
+    register: banner
+
+  - debug: var=banner.stdout_lines
+

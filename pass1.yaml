@@ -1,0 +1,6 @@
+---
+creds:
+  username: root
+  password: Mickeym!2
+  auth_pass: cisco
+  address: 192.168.1.1/30
