@@ -1,0 +1,16 @@
+  - name: Obtain Login
+    include_vars: pass.yaml
+
+  - name: Define ATT Edge1 Provider
+    set_fact:
+      provider:
+        host: "{{ inventory_hostname }}"
+        username: "{{ creds['username'] }}"
+        password: "{{ creds['password'] }}"
+        auth_pass: "{{ creds['auth_pass'] }}"
+
+  - name: ATT Edge1 Router Config
+    ios_config:
+      provider: "{{ provider }}"
+      authorize: yes
+      src: "~/Don-RePo/roles/att-edge1/files/att-edge1.cfg"

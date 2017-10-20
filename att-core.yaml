@@ -1,0 +1,7 @@
+---
+- hosts: att
+  gather_facts: no
+  connection: local
+    
+  roles:
+    - role: att

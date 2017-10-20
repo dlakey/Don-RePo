@@ -1,0 +1,7 @@
+---
+- hosts: tt-dc-rt1
+  gather_facts: no
+  connection: local
+    
+  roles:
+    - role: tt-dc-rt1

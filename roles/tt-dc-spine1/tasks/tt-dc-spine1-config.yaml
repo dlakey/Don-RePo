@@ -1,0 +1,16 @@
+  - name: Obtain Login
+    include_vars: pass.yaml
+
+  - name: Define TT Datacenter Spine1 Switch Provider
+    set_fact:
+      provider:
+        host: "{{ inventory_hostname }}"
+        username: "{{ creds['username'] }}"
+        password: "{{ creds['password'] }}"
+        auth_pass: "{{ creds['auth_pass'] }}"
+
+  - name: TT Datacenter Spine1 Config
+    nxos_config:
+      provider: "{{ provider }}"
+      authorize: yes
+      src: "~/Don-RePo/roles/tt-dc-spine1/files/tt-dc-spine1.cfg"

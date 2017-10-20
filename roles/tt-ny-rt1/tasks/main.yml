@@ -1,0 +1,14 @@
+---
+# tasks file for TT New Your Router
+- name: Obtain Login
+  include_vars: pass.yaml
+
+- name: Define TT New York Router1 Provider
+  set_fact:
+    provider:
+      host: "{{ inventory_hostname }}"
+      username: "{{ creds['username'] }}"
+      password: "{{ creds['password'] }}"
+      auth_pass: "{{ creds['auth_pass'] }}"
+
+- include: tt-ny-rt1-config.yaml

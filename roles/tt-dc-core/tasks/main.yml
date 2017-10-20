@@ -1,0 +1,14 @@
+---
+# tasks file for TT Datacenter Router
+- name: Obtain Login
+  include_vars: pass.yaml
+
+- name: Define TT Datacenter Core Switch Provider
+  set_fact:
+    provider:
+      host: "{{ inventory_hostname }}"
+      username: "{{ creds['username'] }}"
+      password: "{{ creds['password'] }}"
+      auth_pass: "{{ creds['auth_pass'] }}"
+
+- include: tt-dc-core-config.yaml

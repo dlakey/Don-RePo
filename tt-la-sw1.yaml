@@ -1,0 +1,7 @@
+---
+- hosts: tt-la-sw1
+  gather_facts: no
+  connection: local
+    
+  roles:
+    - role: tt-la-sw1

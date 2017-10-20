@@ -1,0 +1,14 @@
+---
+# tasks file for ATT Network MPLS
+- name: Obtain Login
+  include_vars: pass.yaml
+
+- name: Define ATT Edge1 Router Provider
+  set_fact:
+    provider:
+      host: "{{ inventory_hostname }}"
+      username: "{{ creds['username'] }}"
+      password: "{{ creds['password'] }}"
+      auth_pass: "{{ creds['auth_pass'] }}"
+
+- include: att-edge1-config.yaml

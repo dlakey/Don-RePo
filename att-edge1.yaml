@@ -1,0 +1,7 @@
+---
+- hosts: att-edge1
+  gather_facts: no
+  connection: local
+    
+  roles:
+    - role: att-edge1

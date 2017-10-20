@@ -1,0 +1,10 @@
+---
+- include: tt-dc-rt1.yaml
+- include: tt-dc-rt2.yaml
+- include: tt-dc-core.yaml
+- include: tt-ny-rt1.yaml
+- include: tt-chi-rt1.yaml
+- include: tt-la-rt1.yaml
+- include: tt-ny-sw1.yaml
+- include: tt-la-sw1.yaml
+- include: tt-chi-sw1.yaml

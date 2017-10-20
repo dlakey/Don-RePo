@@ -1,0 +1,20 @@
+  - name: Obtain Login
+    include_vars: pass.yaml
+
+  - name: Define TT Datacenter Core Router Provider
+    set_fact:
+      provider:
+        host: "{{ inventory_hostname }}"
+        username: "{{ creds['username'] }}"
+        password: "{{ creds['password'] }}"
+        auth_pass: "{{ creds['auth_pass'] }}"
+        transport: cli
+        validate_certs: false
+
+   
+  - name: TT Datacenter Core Router Config
+    # Get CLI raw text output for a given command
+    nxos_config:
+      provider: "{{ provider }}"
+      authorize: yes
+      src: "~/Don-RePo/roles/tt-dc-core/files/tt-dc-core.cfg"

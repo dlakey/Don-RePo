@@ -1,0 +1,6 @@
+---
+creds:
+  username: cisco
+  password: cisco
+  auth_pass: cisco
+  address: 172.16.145.2

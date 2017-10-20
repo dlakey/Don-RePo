@@ -1,0 +1,16 @@
+  - name: Obtain Login
+    include_vars: pass.yaml
+
+  - name: Define TT New York Switch1 Provider
+    set_fact:
+      provider:
+        host: "{{ inventory_hostname }}"
+        username: "{{ creds['username'] }}"
+        password: "{{ creds['password'] }}"
+        auth_pass: "{{ creds['auth_pass'] }}"
+
+  - name: TT New York Switch1 Config
+    ios_config:
+      provider: "{{ provider }}"
+      authorize: yes
+      src: "~/Don-RePo/roles/tt-ny-sw1/files/tt-ny-sw1.cfg"

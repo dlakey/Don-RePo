@@ -2,7 +2,7 @@
   - name: Run Border Python Script
     command: python border1-config.py
     args:
-      chdir: ~/github/don-repo/python/border/
+      chdir: ~/Don-RePo/python/border/
     register: output
 
   - debug: var=output.stdout_lines

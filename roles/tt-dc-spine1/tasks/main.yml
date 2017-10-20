@@ -1,0 +1,14 @@
+---
+# tasks file for TT Datacenter Spine1 Switch
+- name: Obtain Login
+  include_vars: pass.yaml
+
+- name: Define TT Datacenter Spine1 Switch Provider
+  set_fact:
+    provider:
+      host: "{{ inventory_hostname }}"
+      username: "{{ creds['username'] }}"
+      password: "{{ creds['password'] }}"
+      auth_pass: "{{ creds['auth_pass'] }}"
+
+- include: tt-dc-spine1-config.yaml

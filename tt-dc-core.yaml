@@ -1,0 +1,7 @@
+---
+- hosts: tt-dc-core
+  gather_facts: no
+  connection: local
+    
+  roles:
+    - role: tt-dc-core

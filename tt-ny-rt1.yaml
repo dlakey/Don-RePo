@@ -1,0 +1,7 @@
+---
+- hosts: tt-ny-rt1
+  gather_facts: no
+  connection: local
+    
+  roles:
+    - role: tt-ny-rt1
