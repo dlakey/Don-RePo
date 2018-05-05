@@ -1,0 +1,19 @@
+terminal length 0
+EMS-NXOS-Edge1# term mon
+EMS-NXOS-Edge1# 2017 Oct  5 16:36:01 EMS-NXOS-Edge1 Oct  5 16:36:01 %KERN-3-SYSTEM_MSG: [160382.409566] lcnd_tx_to_l2fwder:513:lcnd: skb cloned. RX handler dev Eth1-3, but don't drop - kernel
+debug bgp all
+EMS-NXOS-Edge1# 2017 Oct  5 16:36:41.120697 bgp: 1014 [28301] (default) ADJ: Peer 172.16.2.2 has pending data on socket during recv, extending expiry timer 
+2017 Oct  5 16:36:41.121347 bgp: 1014 [28301] (default) ADJ: 172.16.2.2 KEEPALIVE rcvd 
+2017 Oct  5 16:36:42.476258 bgp: 1014 [28301] PEV: Sent message 2 to bgp_cleanup_mq 
+2017 Oct  5 16:36:42.476366 bgp: 1014 [28301] PEV: Starting periodic BRIB processing
+2017 Oct  5 16:36:42.476403 bgp: 1014 [28301] (default) RIB: [IPv4 Unicast] Shadow NH 172.16.2.2 not deleted, refcount 13, delete refcount 0
+2017 Oct  5 16:36:42.476472 bgp: 1014 [28301] (default) PEV: [IPv4 Unicast] Cleanup for dest 10.20.100.0/24 exits: has viable paths
+2017 Oct  5 16:36:42.476500 bgp: 1014 [28301] (default) PEV: [IPv4 Unicast] Cleanup for dest 10.20.101.0/24 exits: has viable paths
+2017 Oct  5 16:36:42.476520 bgp: 1014 [28301] (default) PEV: [IPv4 Unicast] Cleanup for dest 10.20.102.0/24 exits: has viable paths
+2017 Oct  5 16:36:42.476547 bgp: 1014 [28301] (default) PEV: [IPv4 Unicast] Cleanup for dest 10.20.103.0/24 exits: has viable paths
+2017 Oct  5 16:36:42.476565 bgp: 1014 [28301] (default) PEV: [IPv4 Unicast] Cleanup for dest 10.20.104.0/24 exits: has viable paths
+2017 Oct  5 16:36:42.476623 bgp: 1014 [28301] (default) PEV: [IPv4 Unicast] tbl_ctx cleanup, 1 shadow NH exist 
+2017 Oct  5 16:36:42.476641 bgp: 1014 [28301] (default) PEV: [IPv6 Unicast] tbl_ctx cleanup, refcount 1 rnh_refcount-flag 0 
+2017 Oct  5 16:36:42.476658 bgp: 1014 [28301] (default) PEV: [IPv6 Unicast] Table cleanup skipped. tbl_ctx 0xe9f119b4, reason_code 14
+no debug all
+EMS-NXOS-Edge1# 2017 Oct  5 16:37:01 EMS-NXOS-Edge1 Oct  5 16:37:01 %KERN-3-SYSTEM_MSG: [160442.415918] lcnd_tx_to_l2fwder:513:lcnd: skb cloned. RX handler dev Eth1-3, but don't drop - kernel

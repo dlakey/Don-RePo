@@ -1,0 +1,7 @@
+show ip arp
+show mac address
+show ip int brie
+show cdp nei
+show version
+show running
+

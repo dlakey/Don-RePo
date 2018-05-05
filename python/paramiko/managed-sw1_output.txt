@@ -1,27 +1,28 @@
 terminal length 0
-managed-sw1>show ip interface brief
-Interface              IP-Address      OK? Method Status                Protocol
-GigabitEthernet0/0     10.255.0.48     YES NVRAM  up                    up      
-GigabitEthernet0/1     172.16.2.76     YES manual up                    up      
-GigabitEthernet0/2     unassigned      YES unset  up                    up      
-GigabitEthernet0/3     unassigned      YES unset  up                    up      
-GigabitEthernet1/0     unassigned      YES unset  up                    up      
-GigabitEthernet1/1     unassigned      YES unset  up                    up      
-GigabitEthernet1/2     unassigned      YES unset  up                    up      
-GigabitEthernet1/3     unassigned      YES unset  up                    up      
-GigabitEthernet2/0     unassigned      YES unset  up                    up      
-GigabitEthernet2/1     unassigned      YES unset  up                    up      
-GigabitEthernet2/2     unassigned      YES unset  up                    up      
-GigabitEthernet2/3     unassigned      YES unset  up                    up      
-GigabitEthernet3/0     unassigned      YES unset  up                    up      
-GigabitEthernet3/1     unassigned      YES unset  up                    up      
-Loopback0              unassigned      YES unset  up                    up      
-Vlan2                  172.16.110.254  YES manual up                    up      
-managed-sw1>show run
-                  ^
-% Invalid input detected at '^' marker.
+managed-sw1>show ip arp
+Protocol  Address          Age (min)  Hardware Addr   Type   Interface
+Internet  172.16.1.254            0   000c.291d.50ca  ARPA   GigabitEthernet0/1
+Internet  172.16.2.2              0   0015.fa32.8249  ARPA   GigabitEthernet0/1
+Internet  172.16.2.21             7   fa16.3e00.0008  ARPA   GigabitEthernet0/1
+Internet  172.16.2.76             -   fa16.3e38.e122  ARPA   GigabitEthernet0/1
+Internet  172.16.110.1           10   fa16.3e00.0009  ARPA   Vlan2
+Internet  172.16.110.4          217   fa16.3ea7.db62  ARPA   Vlan2
+Internet  172.16.110.5          232   fa16.3ead.e389  ARPA   Vlan2
+Internet  172.16.110.254          -   fa16.3e09.8002  ARPA   Vlan2
+managed-sw1>show mac address
+          Mac Address Table
+-------------------------------------------
 
-managed-sw1>show log
-% Incomplete command.
+Vlan    Mac Address       Type        Ports
+----    -----------       --------    -----
+   2    fa16.3e00.0009    DYNAMIC     Gi0/2
+   2    fa16.3e49.d4b7    DYNAMIC     Gi0/2
+   2    fa16.3e77.defc    DYNAMIC     Gi1/0
+   2    fa16.3ea7.4929    DYNAMIC     Gi0/3
+   2    fa16.3ea7.db62    DYNAMIC     Gi1/1
+Total Mac Addresses for this criterion: 5
+managed-sw1>show diag
+                    ^
+% Invalid input detected at '^' marker.
 
 managed-sw1>

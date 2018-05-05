@@ -1,0 +1,2 @@
+cli
+show configuration | display set

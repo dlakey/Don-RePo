@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 
 import paramiko
 import getpass
@@ -8,7 +8,7 @@ import json
 with open('devices.json', 'r') as f:
     devices = json.load(f)
 
-with open('command1.txt', 'r') as f: 
+with open('command1.txt', 'r') as f:
     commands = [line for line in f.readlines()]
 
 username = 'cisco'
@@ -16,16 +16,19 @@ password = 'cisco'
 
 max_buffer = 65535
 
+
 def clear_buffer(connection):
     if connection.recv_ready():
         return connection.recv(max_buffer)
 
+
 # Starts the loop for devices
-for device in devices.keys(): 
+for device in devices.keys():
     outputFileName = device + '_output.txt'
     connection = paramiko.SSHClient()
     connection.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-    connection.connect(devices[device]['ip'], username=username, password=password, look_for_keys=False, allow_agent=False)
+    connection.connect(devices[device]['ip'], username=username, password=password, look_for_keys=False,
+                       allow_agent=False)
     new_connection = connection.invoke_shell()
     output = clear_buffer(new_connection)
     time.sleep(2)
@@ -34,10 +37,9 @@ for device in devices.keys():
     with open(outputFileName, 'wb') as f:
         for command in commands:
             new_connection.send(command)
-            time.sleep(4)
+            time.sleep(35)
             output = new_connection.recv(max_buffer)
- #          print(output)
+            #          print(output)
             f.write(output)
-    
+
     new_connection.close()
-    

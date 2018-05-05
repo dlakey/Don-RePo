@@ -1,3 +1,4 @@
-show ip interface brief
-show run
-show log
+show ip bgp sum
+show ip bgp 
+show ip arp
+show mac address

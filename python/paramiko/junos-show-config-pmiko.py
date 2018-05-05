@@ -8,11 +8,11 @@ import json
 with open('devices.json', 'r') as f:
     devices = json.load(f)
 
-with open('command1.txt', 'r') as f: 
+with open('juno-show.txt', 'r') as f: 
     commands = [line for line in f.readlines()]
 
-username = 'cisco'
-password = 'cisco'
+username = 'root'
+password = 'Juniper'
 
 max_buffer = 65535
 
@@ -34,9 +34,9 @@ for device in devices.keys():
     with open(outputFileName, 'wb') as f:
         for command in commands:
             new_connection.send(command)
-            time.sleep(4)
+            time.sleep(35)
             output = new_connection.recv(max_buffer)
- #          print(output)
+            print(output)
             f.write(output)
     
     new_connection.close()
